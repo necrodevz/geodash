@@ -3,6 +3,7 @@ import alfrescoLogo from './alfresco-icon.png'
 import filetrailLogo from './filetrail-icon.jpg'
 import googleLogo from './google-icon.png'
 import nlaLogo from './nla-icon.gif'
+import tajLogo from './taj-icon.jpg'
 
 export const appSites = [
     {
@@ -11,8 +12,8 @@ export const appSites = [
         subtitle: "Geoland's Land Title System",
         img: {
             src: ltsLogo,
-            height: '180px',
-            width: '318px'
+            height: '250px',
+            width: '250px'
         }, 
         description: 'Use the Land Title System to add and edit Land Title Applications',
         target: { 
@@ -27,8 +28,8 @@ export const appSites = [
         subtitle: "File management system",
         img: {
             src: filetrailLogo,
-            height: '180px',
-            width: '318px'
+            height: '250px',
+            width: '250px'
         }, 
         description: 'Use Filetrail to track and move physical files in the office',
         target: { 
@@ -43,8 +44,8 @@ export const appSites = [
         subtitle: "Document Management system",
         img: {
             src: alfrescoLogo,
-            height: '180px',
-            width: '318px'
+            height: '250px',
+            width: '250px'
         }, 
         description: 'Use Alfresco to manage internal and external draft and template documents',
         target: { 
@@ -58,8 +59,8 @@ export const appSites = [
         subtitle: "External Website managed by NLA",
         img: {
             src: nlaLogo,
-            height: '180px',
-            width: '318px'
+            height: '250px',
+            width: '250px'
         }, 
         description: 'Use Eland to check <More info needed>',
         target: { 
@@ -74,12 +75,28 @@ export const appSites = [
         subtitle: "Google Mail",
         img: {
             src: googleLogo,
-            height: '180px',
-            width: '318px'
+            height: '250px',
+            width: '250px'
         }, 
         description: 'Access emails here',
         target: { 
             url: 'https://inbox.gmail.com',
+            app: 'firefox' || 'google chrome'
+            
+        }
+    },
+    {
+        key: 6,
+        title: 'Property Tax Query',
+        //subtitle: ,
+        img: {
+            src: tajLogo,
+            height: '250px',
+            width: '250px'
+        }, 
+        description: 'Use Valuation No. to gain tax roll information',
+        target: { 
+            url: 'https://ptsqueryonline.fsl.org.jm/PTSOnlineWeb/ptsquery.jsp',
             app: 'firefox' || 'google chrome'
             
         }

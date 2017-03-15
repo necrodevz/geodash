@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 import {store, history} from '../store'
 import { Main } from '../layouts'
-import Apps from '../views'
-import Home from '../views'
+import Apps from '../views/Apps'
+import Home  from '../views/Home'
 
 const Router = () => {
     return(

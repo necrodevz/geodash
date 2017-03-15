@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {Col, Row,} from 'reactstrap'
+import { Row,} from 'reactstrap'
 import Header from '../components/Header'
-import SideBar from '../components/SideBar'
-//import {Home} from '../views'
+//import SideBar from '../components/SideBar'
+import { connect } from 'react-redux'
 
 class Main extends Component {
     margin = {
@@ -13,21 +13,24 @@ class Main extends Component {
         return(
             <div>
                 <Row>
-                    <Header />
+                    <Header navItems={this.props.navItems} onClick={this.onClick} currentPage={this.props.currentPage}/>
                 </Row>
+                <hr style={{marginTop: '54px'}} />
                 <Row style={this.margin}>
-                    <Col md={{offset:2}} >
-                        <Col md={3}>
-                            <SideBar />
-                        </Col>
-                        <Col md={{size:8, offset:1}} >
-                            {this.props.children}
-                        </Col>
-                    </Col>
+                    {this.props.children}
                 </Row>
             </div>
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        navItems: state.nav,
+        currentPage: state.router.location.pathname
+    }
+}
 
-export default Main
+ 
+export default connect(mapStateToProps)(Main)
+
+//export default Main

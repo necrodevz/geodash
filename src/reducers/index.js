@@ -1,7 +1,7 @@
-import types from '../actions'
+//import types from '../actions'
 import { navItems, appSites } from '../initializers'
 
-console.log(navItems)
+console.log({nav:navItems, app:appSites})
 
 export function nav(state=navItems, action) {
     switch(action.type) {
@@ -17,7 +17,7 @@ export function apps(state=appSites, action) {
     }
 }
 
-export function currentPage(state=1, action) {
+export function currentPage(state='', action) {
     switch(action.type) {
         
         default:
