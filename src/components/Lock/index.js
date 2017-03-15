@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Auth0Lock from 'auth0-lock'
 import { Button } from 'react-bootstrap'
 
-const lock = new Auth0Lock(process.env.AUTH0_CLIENTID, process.env.AUTH0_DOMAIN, {
+const lock = new Auth0Lock("6dtkMlnUu7Rc76AYdXidt3ru92pVDvJV", "dkb.auth0.com", {
     responseType: 'token',
     params: {
         scope: 'openid'

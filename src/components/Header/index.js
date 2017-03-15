@@ -1,30 +1,44 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavItem } from 'react-bootstrap'
-import Link from 'react-router'
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap'
 import LockButton from '../Lock'
+import {connect} from 'react-redux'
+import {version} from '../../../package.json'
 
-class Header extends Component {
-    
-    
-    render() {
-        return(
-            <nav>
-                <Navbar collapseOnSelect fixedTop fluid inverse>
-                    <Navbar.Header>
-                        <Navbar.Toggle />
-                        <h2> Geoland Dashboard </h2>
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                        <Nav bsStyle="tabs" pullRight onSelect={this.props.handleSelect}>
-                            {
-                                this.props.navItems.map((item, key) => {
-                                    <NavItem key={key}><Link to={item.url}>{item.label}</Link></NavItem>
-                                })
-                            }
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
-            </nav>
-        )
+
+const Header = (props) => {
+    console.log(props)
+    const items = props.navItems
+    return(
+        <nav>
+            <Navbar inverse fixed toggleable>
+                <NavbarBrand>
+                    <NavbarToggler />
+                    <h2> Geoland Dashboard <small>v{ version }</small></h2>
+                </NavbarBrand>
+                <Collapse navbar>
+                    <Nav className='ml-auto' color='faded' pills onSelect={props.handleSelect}>
+                        {
+                            items.map((item) => {
+                                return(
+                                    <NavItem key={item.key}>
+                                        <NavLink href={item.url}>{item.label}</NavLink>
+                                    </NavItem>
+                                )
+                            })
+                        }
+                    </Nav>
+                </Collapse>
+            </Navbar>
+        </nav>
+    )
+}
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        navItems: state.nav,
+        currentPage: state.currentPage
     }
 }
+
+ 
+export default connect(mapStateToProps)(Header)

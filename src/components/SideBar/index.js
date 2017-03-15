@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Apps = (props) => {
+const SideBar = () => {
     return(
         <div>
         </div>
     )
 }
 
-export default Apps
+export default SideBar
